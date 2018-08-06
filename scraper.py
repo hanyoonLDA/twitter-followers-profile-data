@@ -1,7 +1,6 @@
 import scraperwiki
 import simplejson
 import urllib2
-from scraperwiki import swimport
 
 myfollowers = []
 twitter_handle = 'datahh'
@@ -11,4 +10,4 @@ results_json = simplejson.loads(scraperwiki.scrape(base_url))
 myfollowers = results_json['ids']
 myfollowers_str = map(str, myfollowers) 
 
-swimport('twitter_bulk_users_lookup').bulklookup(myfollowers_str)
+scraperwiki.swimport('twitter_bulk_users_lookup').bulklookup(myfollowers_str)
